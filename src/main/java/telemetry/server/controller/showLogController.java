@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.alibaba.fastjson.JSON;
 
-import telemetry.server.bo.JsonResult;
-import telemetry.server.bo.MyException;
+import telemetry.server.model.JsonResult;
+import telemetry.server.model.MyException;
 
 /**
  * 本controller为demo样例。里面有基本的日志记录，异常处理，获取请求的json数据（入参可传可不传），返回的样例：{"code":0,"data":{},"msg":"ok!"}
@@ -33,13 +33,13 @@ public class showLogController {
 		logger.info("--------进入demo------------------logInfo:"+logInfo);
 		
 		/* Exception异常会自动拦截，这里只是做个测试自定义异常*/
-        if (0<1) {
+       /* if (0<1) {
             try {
 				throw new MyException("999", "异常信息测试");
 			} catch (MyException e) {
 				logger.error(JsonResult.failed(Integer.parseInt(e.getCode()), e.getMsg()));
 			}
-        } 
+        } */
 		return JSON.toJSONString(new JsonResult(0, "your words:"+logInfo, new HashMap<>(0)));
 	}
 	

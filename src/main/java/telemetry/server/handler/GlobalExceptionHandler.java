@@ -16,8 +16,8 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import telemetry.server.bo.JsonResult;
-import telemetry.server.bo.MyException;
+import telemetry.server.model.JsonResult;
+import telemetry.server.model.MyException;
 
 
 
